@@ -8,34 +8,41 @@ import {
 } from 'react-router-dom';
 import { fetchMovieDetailsById } from 'service/theMovieDbApi';
 import { Loader } from 'components/Loader/Loader';
-
 import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
+  const [error, setError] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
-  const backPath = useRef(location.state || '/');
+  const backPath = useRef(location.state?.from || '/');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await fetchMovieDetailsById(movieId);
-        setMovie(result);
+        if (result) {
+          setMovie(result);
+          setError(null);
+        } else {
+          throw new Error('Movie not found');
+        }
       } catch (error) {
-        console.log(error.message);
+        setError(error.message);
+        console.error('Fetch error:', error.message);
       }
     };
-
     fetchData();
   }, [movieId]);
+
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className={styles.container}>
       <Link to={backPath.current} className={styles.goBackLink}>
         Go Back
       </Link>
-      {movie && (
+      {movie ? (
         <div className={styles.movieContent}>
           <img
             src={
@@ -48,13 +55,15 @@ const MovieDetails = () => {
           />
           <h3 className={styles.movieTitle}>{movie.title}</h3>
           <p className={styles.movieRating}>
-            Raiting {movie.vote_average.toFixed(2)}
+            Rating: {movie.vote_average.toFixed(2)}
           </p>
           <p className={styles.movieOverview}>{movie.overview}</p>
           <p className={styles.movieGenres}>
             Genres: {movie.genres.map(({ name }) => name).join(', ')}
           </p>
         </div>
+      ) : (
+        <p>Loading...</p>
       )}
       <ul className={styles.navList}>
         <li className={styles.navItem}>

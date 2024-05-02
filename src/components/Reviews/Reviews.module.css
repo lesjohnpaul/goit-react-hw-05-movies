@@ -14,7 +14,7 @@
   list-style: none;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: #34495e;
+  background-color: #282c34;
   /* Slightly different background to distinguish items */
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -36,7 +36,7 @@
 }
 
 .read-more {
-  background-color: #3498db;
+  background-color: #282c34;
   color: #fff;
   padding: 5px 10px;
   border: none;
