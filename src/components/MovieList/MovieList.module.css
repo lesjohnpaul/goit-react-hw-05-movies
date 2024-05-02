@@ -1,11 +1,10 @@
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  background-color: #282c34;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+  background-color: #282c34;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 ul {
@@ -15,12 +14,12 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
+  gap: 20px;
 }
 
 .movie-list-item {
-  width: calc(25% - 12px);
-  margin-bottom: 20px;
+  width: 220px;
+   text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -30,32 +29,21 @@ ul {
 
 .moviePoster {
   width: 100%;
-  height: auto;
+  height: 330px;
+  border-radius: 10px;
   object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .movie-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-decoration: none;
+  display: block;
+  margin-top: 8px;
   color: #fff;
-  transition: all 0.3s ease;
-  background-color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
-
-.movie-link img {
-  width: 100%;
-  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
 }
 
 .movie-link:hover {
-  background-color: #f5f5f5;
-  color: #333;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #ffb6c1;
 }
