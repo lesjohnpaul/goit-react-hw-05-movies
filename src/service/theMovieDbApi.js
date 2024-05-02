@@ -5,7 +5,7 @@ const successToken =
 
 const baseUrl = 'https://api.themoviedb.org/3';
 
-export const fecthTrendingMovies = async () => {
+export const fetchTrendingMovies = async () => {
   const {
     data: { results },
   } = await axios(`${baseUrl}/trending/movie/day`, {

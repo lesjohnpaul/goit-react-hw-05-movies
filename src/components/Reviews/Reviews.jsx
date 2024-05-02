@@ -6,15 +6,22 @@ import styles from './Reviews.module.css';
 const Reviews = () => {
   const [reviews, setReviews] = useState(null);
   const [expandedReviews, setExpandedReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const { movieId } = useParams();
+
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
         const result = await fetchReviewsByMovieId(movieId);
         setReviews(result);
+        setError(null);
       } catch (error) {
+        setError('Failed to fetch reviews.');
         console.log(error.message);
       } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -24,12 +31,14 @@ const Reviews = () => {
     setExpandedReviews(prevExpandedReviews => [...prevExpandedReviews, author]);
   };
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <ul className={styles['reviews-container']}>
       {reviews && reviews.length > 0 ? (
         reviews.map(({ author, content }) => {
           const isShortReview = content.split('\n').length <= 3;
-
           return (
             <li key={author} className={styles['review-item']}>
               <h3 className={styles['review-author']}>{author}</h3>
@@ -50,7 +59,9 @@ const Reviews = () => {
           );
         })
       ) : (
-        <li className={styles['read-more-loader']}>There are no reviews so far ...</li>
+        <li className={styles['read-more-loader']}>
+          There are no reviews so far.
+        </li>
       )}
     </ul>
   );

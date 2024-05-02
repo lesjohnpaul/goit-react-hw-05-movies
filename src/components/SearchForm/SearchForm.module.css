@@ -1,32 +1,48 @@
 .searchForm {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    align-items: center;
-    margin: 24px auto;
-  }
-  
-  .searchInput {
-    flex: 1;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .searchButton {
-    width: 100%;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .searchButton:hover {
-    background-color: #2980b9;
-  }
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  margin: 24px auto;
+  transition: box-shadow 0.3s ease-in-out;
+  /* Smooth shadow transition for a hover effect */
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+  /* Added transform and shadow transition */
+}
+
+.searchInput:focus {
+  transform: scale(1.03);
+  /* Slightly enlarges the input when focused */
+  box-shadow: 0 2px 8px rgba(87, 126, 194, 0.2);
+  /* Adds a subtle shadow around the input on focus */
+}
+
+.searchButton {
+  width: 100%;
+  background-color: #364147;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Added transform to the transition */
+}
+
+.searchButton:hover {
+  background-color: #315b76;
+  transform: translateY(-3px);
+  /* Moves button up slightly on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds shadow for 3D effect on hover */
+}
