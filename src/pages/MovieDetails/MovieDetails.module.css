@@ -1,0 +1,80 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.goBackLink {
+    display: block;
+    margin-bottom: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.movieContent {
+    text-align: center;
+}
+
+.movieContent>p {
+    text-align: left;
+}
+
+.moviePoster {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.movieTitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #000;
+}
+
+.movieRating {
+    font-size: 1.2em;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.movieOverview {
+    font-size: 1em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.movieGenres {
+    font-size: 1em;
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navItem {
+    margin-right: 20px;
+}
+
+.navItem a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Зміна кольору посилань при наведенні */
+.navItem a:hover {
+    color: #2980b9;
+}
