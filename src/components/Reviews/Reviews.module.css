@@ -1,0 +1,41 @@
+.reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.review-item {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-content {
+    font-size: 1em;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.read-more {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #2980b9;
+}
+
+.read-more-loader {
+    color: #fff;
+}

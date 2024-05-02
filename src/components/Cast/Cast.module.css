@@ -1,0 +1,33 @@
+.cast-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cast-list-item {
+    list-style: none;
+    margin-bottom: 20px;
+    text-align: center;
+    width: calc(25% - 20px);
+}
+
+.cast-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cast-name {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.cast-not-found {
+    color: #ffffff;
+}
+
